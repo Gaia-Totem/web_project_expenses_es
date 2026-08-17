@@ -44,3 +44,30 @@ function calculateCategoryExpenses(CategoryExpense) {
   }
   return total;
 }
+function calculateLargestCategory() {
+  const categories = [
+    "groceries",
+    "restaurants",
+    "transport",
+    "home",
+    "subscriptions",
+  ];
+  const categoriesData = [];
+
+  for (const category of categories) {
+    const total = calculateCategoryExpenses(category);
+
+    categoriesData.push([category, total]);
+  }
+
+  let maximumExpense = 0;
+  let maximumCategory = "";
+  for (const categoryData of categoriesData) {
+    if (categoryData[1] > maximumExpense) {
+      maximumExpense = categoryData[1];
+      maximumCategory = categoryData[0];
+    }
+  }
+
+  return maximumCategory;
+}
