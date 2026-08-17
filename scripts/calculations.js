@@ -1,5 +1,5 @@
-let budgetValue; //almacenar el importe total del presupuesto que establecemos en Presupuesto
-let totalExpensesValue; //para realizar un seguimiento de la suma de todos los gastos, que se muestra como Gastos totales.
+let budgetValue = 0; //almacenar el importe total del presupuesto que establecemos en Presupuesto
+let totalExpensesValue = 0; //para realizar un seguimiento de la suma de todos los gastos, que se muestra como Gastos totales.
 //Gastos iniciales []
 const expenseEntries = [
   ["groceries", 33],
@@ -70,4 +70,8 @@ function calculateLargestCategory() {
   }
 
   return maximumCategory;
+}
+function addExpenseEntry(expense) {
+  expenseEntries.push(expense);
+  totalExpensesValue += expense[1];
 }
