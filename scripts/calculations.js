@@ -19,3 +19,17 @@ function calculateAverageExpense() {
 function calculateBalance() {
   return budgetValue - totalExpensesValue;
 }
+
+let balanceColor = "green";
+
+function updateBalanceColor() {
+  const balance = calculateBalance();
+
+  if (balance < 0) {
+    balanceColor = "red";
+  } else if (balance < budgetValue * 0.25) {
+    balanceColor = "orange"; //⚠️ "Cuidado, tu saldo está por debajo del 25% de tu presupuesto."
+  } else {
+    balanceColor = "green";
+  }
+}
