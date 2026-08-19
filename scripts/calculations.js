@@ -10,6 +10,10 @@ const expenseEntries = [
   ["groceries", 28],
   ["subscriptions", 12],
 ];
+for (const expense of expenseEntries) {
+  //se agrega al loop inicial un contador/acumulador que guarda la suma de esos gastos del array expenseEntries.
+  totalExpensesValue += expense[1];
+}
 function calculateAverageExpense() {
   if (expenseEntries.length === 0) {
     return 0;
